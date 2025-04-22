@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ybvndvwux-nodejs-gitops
+  description: This is GitOps manifest for ybvndvwux-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ybvndvwux-nodejs
+    backstage.io/kubernetes-id: ybvndvwux-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ybvndvwux-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ybvndvwux-nodejs
